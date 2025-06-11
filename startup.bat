@@ -4,9 +4,9 @@ color 0A
 
 :MENU
 cls
-echo ===============================
-echo         CHOISIS UNE OPTION
-echo ===============================
+echo ======================================
+echo           CHOISIS UNE OPTION
+echo ======================================
 echo 1 - B-FLOW (WEB)
 echo 2 - B-FLOW (Mobile)
 echo 3 - VS Code
@@ -15,7 +15,7 @@ echo 5 - Geometry Dash
 echo 6 - Project 64
 echo 7 - Opera GX
 echo 0 - Quitter
-echo ===============================
+echo ======================================
 set /p choice=Ton choix : 
 
 if "%choice%"=="1" goto B_FLOW_WEB
