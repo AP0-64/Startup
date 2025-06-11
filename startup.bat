@@ -28,12 +28,12 @@ if "%choice%"=="7" goto OPERA_GX
 if "%choice%"=="0" exit
 goto MENU
 
-:B-FLOW_WEB
+:B_FLOW_WEB
 start "" "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 start "" "C:\Program Files\Docker\Docker\Docker Desktop.exe"
 goto END
 
-:B-FLOW_MOB
+:B_FLOW_MOB
 start "" "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 start "" "C:\Program Files\Docker\Docker\Docker Desktop.exe"
 start "" "C:\Program Files\Android\Android Studio\bin\studio64.exe"
