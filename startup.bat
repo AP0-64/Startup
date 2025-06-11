@@ -31,14 +31,12 @@ goto MENU
 :BFLOW_WEB
 start "" "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 start "" "C:\Program Files\Docker\Docker\Docker Desktop.exe"
-start "" "C:\Users\berti\AppData\Local\Programs\Opera GX\opera.exe"
 goto END
 
 :BFLOW_MOB
 start "" "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 start "" "C:\Program Files\Docker\Docker\Docker Desktop.exe"
 start "" "C:\Program Files\Android\Android Studio\bin\studio64.exe"
-start "" "C:\Users\berti\AppData\Local\Programs\Opera GX\opera.exe"
 goto END
 
 :VS_OPERA
