@@ -7,8 +7,8 @@ cls
 echo ===============================
 echo         CHOISIS UNE OPTION
 echo ===============================
-echo 1 - B-FLOW - WEB
-echo 2 - B-FLOW - Mobile
+echo 1 - B-FLOW (WEB)
+echo 2 - B-FLOW (Mobile)
 echo 3 - VS Code
 echo 4 - Cities Skylines 2
 echo 5 - Geometry Dash
