@@ -18,8 +18,8 @@ echo 0 - Quitter
 echo ===============================
 set /p choice=Ton choix : 
 
-if "%choice%"=="1" goto B-FLOW_WEB
-if "%choice%"=="2" goto B-FLOW_MOB
+if "%choice%"=="1" goto B_FLOW_WEB
+if "%choice%"=="2" goto B_FLOW_MOB
 if "%choice%"=="3" goto VS_CODE_ET_OPERA_GX
 if "%choice%"=="4" goto CITIES_SKYLINES_II
 if "%choice%"=="5" goto GEOMETRY_DASH
@@ -28,12 +28,12 @@ if "%choice%"=="7" goto OPERA_GX
 if "%choice%"=="0" exit
 goto MENU
 
-:B-FLOW_WEB
+:B_FLOW_WEB
 start "" "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 start "" "C:\Program Files\Docker\Docker\Docker Desktop.exe"
 goto END
 
-:B-FLOW_MOB
+:B_FLOW_MOB
 start "" "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 start "" "C:\Program Files\Docker\Docker\Docker Desktop.exe"
 start "" "C:\Program Files\Android\Android Studio\bin\studio64.exe"
