@@ -18,46 +18,46 @@ echo 0 - Quitter
 echo ===============================
 set /p choice=Ton choix : 
 
-if "%choice%"=="1" goto BFLOW_WEB
-if "%choice%"=="2" goto BFLOW_MOB
-if "%choice%"=="3" goto VS_OPERA
-if "%choice%"=="4" goto SKYLINES
-if "%choice%"=="5" goto GEOMETRY
-if "%choice%"=="6" goto PROJECT64
-if "%choice%"=="7" goto OPERA
+if "%choice%"=="1" goto B-FLOW_WEB
+if "%choice%"=="2" goto B-FLOW_MOB
+if "%choice%"=="3" goto VS_CODE_ET_OPERA_GX
+if "%choice%"=="4" goto CITIES_SKYLINES_II
+if "%choice%"=="5" goto GEOMETRY_DASH
+if "%choice%"=="6" goto PROJECT_64
+if "%choice%"=="7" goto OPERA_GX
 if "%choice%"=="0" exit
 goto MENU
 
-:BFLOW_WEB
+:B-FLOW_WEB
 start "" "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 start "" "C:\Program Files\Docker\Docker\Docker Desktop.exe"
 goto END
 
-:BFLOW_MOB
+:B-FLOW_MOB
 start "" "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 start "" "C:\Program Files\Docker\Docker\Docker Desktop.exe"
 start "" "C:\Program Files\Android\Android Studio\bin\studio64.exe"
 goto END
 
-:VS_OPERA
+:VS_CODE_ET_OPERA_GX
 start "" "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 start "" "C:\Users\berti\AppData\Local\Programs\Opera GX\opera.exe"
 goto END
 
-:SKYLINES
+:CITIES_SKYLINES_II
 start "" "C:\Users\berti\OneDrive\Bureau\Cities Skylines II.url"
 goto END
 
-:GEOMETRY
+:GEOMETRY_DASH
 start "" "C:\Users\berti\OneDrive\Bureau\Geometry Dash.url"
 goto END
 
-:PROJECT64
+:PROJECT_64
 start "" "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Project64 2.3\Project64.lnk"
 start "" "C:\Users\berti\AppData\Local\Programs\Opera GX\opera.exe"
 goto END
 
-:OPERA
+:OPERA_GX
 start "" "C:\Users\berti\AppData\Local\Programs\Opera GX\opera.exe"
 goto END
 
