@@ -18,7 +18,7 @@ cls
 echo =====================================
 echo           MENU DE LANCEMENT
 echo =====================================
-echo Tape les numéros des apps à lancer (ex: 13 ou 241)
+echo Tape les numéros des apps à lancer (ex: 14 ou 231)
 echo.
 echo 1 - Lancer A
 echo 2 - Lancer B
