@@ -3,25 +3,23 @@ setLocal EnableDelayedExpansion
 title Lanceur Multi-Apps
 color 0A
 
-:: === Définir les chemins des programmes ===
-set "app1=C:\Program Files\Android\Android Studio\bin\studio64.exe"
+:: === Chemins des programmes ===
+set "app1=C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 set "app2=C:\Program Files\Docker\Docker\Docker Desktop.exe"
-set "app3=C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe"
-set "app4=C:\Users\berti\OneDrive\Bureau\Cities Skylines II.url"
-set "app5=C:\Users\berti\AppData\Local\Programs\Opera GX\opera.exe"
+set "app3=C:\Users\berti\AppData\Local\Programs\Opera GX\opera.exe"
+set "app4=C:\Program Files\Android\Android Studio\bin\studio64.exe"
+set "app5=C:\Users\berti\OneDrive\Bureau\Cities Skylines II.url"
 set "app6=C:\Program Files (x86)\Project64 3.0\Project64.exe"
 set "app7=C:\Users\berti\OneDrive\Bureau\Geometry Dash.url"
 
-:: === Définir les noms de processus associés ===
-set "proc1=android"
-set "proc2=Docker Desktop"
-set "proc3=Code"
-set "proc4=Cities Skylines II"
-set "proc5=opera"
-set "proc6=Project64"
-set "proc7=chrome"
+:: === Noms des processus ===
+set "procVSCode=Code"
+set "procDocker=Docker Desktop.exe"
+set "procOpera=opera"
+set "procAndroid=studio64"
+set "procProject64=Project64"
 
-:: === Affichage du menu ===
+:: === Menu de lancement ===
 :MENU
 cls
 echo =====================================
@@ -29,16 +27,16 @@ echo           MENU DE LANCEMENT
 echo =====================================
 echo Tape les numéros des apps à lancer (ex: 14 ou 231)
 echo.
-echo 1 - Lancer B-FLOW (WEB)
-echo 2 - Lancer B-FLOW (Mobile)
-echo 3 - Lancer VS Code
-echo 4 - Lancer Cities Skylines II
-echo 5 - Lancer Opera GX
-echo 6 - Lancer Project 64
-echo 7 - Lancer Geometry Dash
+echo 1 - B-FLOW (WEB)       [VSCode + Docker + Opera]
+echo 2 - B-FLOW (Mobile)    [VSCode + Docker + Opera + Android Studio]
+echo 3 - VS Code
+echo 4 - Cities Skylines 2
+echo 5 - Opera GX
+echo 6 - Project 64
+echo 7 - Geometry Dash
 echo 0 - Quitter
 echo =====================================
-set /p choice=Ton choix : 
+set /p choice=Ton choix :
 
 :: === Arrête le programme ===
 if "%choice%"=="0" exit
@@ -47,78 +45,53 @@ if "%choice%"=="0" exit
 set "cleaned="
 for %%C in (1 2 3 4 5 6 7) do (
     echo %choice% | find "%%C" >nul
-    if not errorLevel 1 (
+    if not errorlevel 1 (
         echo !cleaned! | find "%%C" >nul
-        if errorLevel 1 set "cleaned=!cleaned!%%C"
+        if errorlevel 1 set "cleaned=!cleaned!%%C"
     )
 )
 
 cls
-echo ========== VÉRIFICATION & LANCEMENT ==========
+echo ========== Vérification & Lancement ==========
+:LaunchIfNotRunning
+tasklist /FI "IMAGENAME eq %1.exe" | find /I "%1.exe" >nul
+if errorlevel 1 (
+    echo → Lancement de %2...
+    start "" "%2"
+) else (
+    echo → %2 déjà ouvert.
+)
+goto :eof
 
+:: Lancement selon choix
 for %%C in (!cleaned!) do (
     if "%%C"=="1" (
-        taskList /fi "imageName eq !proc1!.exe" | find /i "!proc1!.exe" >nul
-        if errorLevel 1 (
-            echo → Lancement des applis nécessaires pour B-FLOW...
-            start "" "!app1!"
-        ) else (
-            echo → Android Studio déjà ouvert.
-        )
+        call :LaunchIfNotRunning "%procVSCode%" "!app1!"
+        call :LaunchIfNotRunning "%procDocker%" "!app2!"
+        call :LaunchIfNotRunning "%procOpera%" "!app3!"
     )
     if "%%C"=="2" (
-        taskList /fi "imageName eq !proc2!.exe" | find /i "!proc2!.exe" >nul
-        if errorLevel 1 (
-            echo → Lancement des applis nécessaires pour B-FLOW...
-            start "" "!app2!"
-        ) else (
-            echo → Docker déjà ouvert.
-        )
+        call :LaunchIfNotRunning "%procVSCode%" "!app1!"
+        call :LaunchIfNotRunning "%procDocker%" "!app2!"
+        call :LaunchIfNotRunning "%procOpera%" "!app3!"
+        call :LaunchIfNotRunning "%procAndroid%" "!app4!"
     )
     if "%%C"=="3" (
-        taskList /fi "imageName eq !proc3!.exe" | find /i "!proc3!.exe" >nul
-        if errorLevel 1 (
-            echo → Lancement de VS Code...
-            start "" "!app3!"
-        ) else (
-            echo → VS Code déjà ouvert.
-        )
+        call :LaunchIfNotRunning "%procVSCode%" "!app1!"
     )
     if "%%C"=="4" (
-        taskList /fi "imageName eq !proc4!.exe" | find /i "!proc4!.exe" >nul
-        if errorLevel 1 (
-            echo → Lancement de Cities Skylines II...
-            start "" "!app4!"
-        ) else (
-            echo → Cities Skylines II déjà ouvert.
-        )
+        echo → Lancement de Cities Skylines II...
+        start "" "!app5!"
     )
     if "%%C"=="5" (
-        taskList /fi "imageName eq !proc5!.exe" | find /i "!proc5!.exe" >nul
-        if errorLevel 1 (
-            echo → Lancement de Opera GX...
-            start "" "!app5!"
-        ) else (
-            echo → Opera GX déjà ouvert.
-        )
+        call :LaunchIfNotRunning "%procOpera%" "!app3!"
     )
     if "%%C"=="6" (
-        taskList /fi "imageName eq !proc6!.exe" | find /i "!proc6!.exe" >nul
-        if errorLevel 1 (
-            echo → Lancement de Project64...
-            start "" "!app6!"
-        ) else (
-            echo → Project64 déjà ouvert.
-        )
+        call :LaunchIfNotRunning "%procProject64%" "!app6!"
     )
     if "%%C"=="7" (
-        taskList /fi "imageName eq !proc7!.exe" | find /i "!proc7!.exe" >nul
-        if errorLevel 1 (
-            echo → Lancement de Geometry Dash...
-            start "" "!app7!"
-        ) else (
-            echo → Geometry Dash déjà ouvert.
-        )
+        echo → Lancement de Geometry Dash...
+        start "" "!app7!"
     )
 )
 
