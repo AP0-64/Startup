@@ -4,13 +4,13 @@ title Lanceur Multi-Apps
 color 0A
 
 :: === Définir les chemins des programmes ===
-set "app1=C:\chemin\vers\A.exe"
-set "app2=C:\chemin\vers\B.exe"
-set "app3=C:\chemin\vers\C.exe"
-set "app4=C:\chemin\vers\D.exe"
-set "app5=C:\chemin\vers\E.exe"
-set "app6=C:\chemin\vers\F.exe"
-set "app7=C:\chemin\vers\G.exe"
+set "app1=C:\Program Files\Android\Android Studio\bin\studio64.exe"
+set "app2=C:\Program Files\Docker\Docker\Docker Desktop.exe"
+set "app3=C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+set "app4=C:\Users\berti\OneDrive\Bureau\Cities Skylines II.url"
+set "app5=C:\Users\berti\AppData\Local\Programs\Opera GX\opera.exe"
+set "app6=C:\Program Files (x86)\Project64 3.0\Project64.exe"
+set "app7=C:\Users\berti\OneDrive\Bureau\Geometry Dash.url"
 
 :: === Affichage du menu ===
 :MENU
@@ -50,8 +50,8 @@ echo === LANCEMENT ===
 
 for %%C in (!cleaned!) do (
     if "%%C"=="1" (
-        tasklist /fi "imagename eq !proc1!.exe" | find /i "!proc1!.exe" >nul
-        if errorlevel 1 (
+        taskList /fi "imageName eq !proc1!.exe" | find /i "!proc1!.exe" >nul
+        if errorLevel 1 (
             echo → Lancement de A...
             start "" "!app1!"
         ) else (
@@ -59,8 +59,8 @@ for %%C in (!cleaned!) do (
         )
     )
     if "%%C"=="2" (
-        tasklist /fi "imagename eq !proc2!.exe" | find /i "!proc2!.exe" >nul
-        if errorlevel 1 (
+        taskList /fi "imageName eq !proc2!.exe" | find /i "!proc2!.exe" >nul
+        if errorLevel 1 (
             echo → Lancement de B...
             start "" "!app2!"
         ) else (
@@ -68,8 +68,8 @@ for %%C in (!cleaned!) do (
         )
     )
     if "%%C"=="3" (
-        tasklist /fi "imagename eq !proc3!.exe" | find /i "!proc3!.exe" >nul
-        if errorlevel 1 (
+        taskList /fi "imageName eq !proc3!.exe" | find /i "!proc3!.exe" >nul
+        if errorLevel 1 (
             echo → Lancement de C...
             start "" "!app3!"
         ) else (
@@ -77,8 +77,8 @@ for %%C in (!cleaned!) do (
         )
     )
     if "%%C"=="4" (
-        tasklist /fi "imagename eq !proc4!.exe" | find /i "!proc4!.exe" >nul
-        if errorlevel 1 (
+        taskList /fi "imageName eq !proc4!.exe" | find /i "!proc4!.exe" >nul
+        if errorLevel 1 (
             echo → Lancement de D...
             start "" "!app4!"
         ) else (
@@ -86,8 +86,8 @@ for %%C in (!cleaned!) do (
         )
     )
     if "%%C"=="5" (
-        tasklist /fi "imagename eq !proc5!.exe" | find /i "!proc5!.exe" >nul
-        if errorlevel 1 (
+        taskList /fi "imageName eq !proc5!.exe" | find /i "!proc5!.exe" >nul
+        if errorLevel 1 (
             echo → Lancement de E...
             start "" "!app5!"
         ) else (
@@ -95,8 +95,8 @@ for %%C in (!cleaned!) do (
         )
     )
     if "%%C"=="6" (
-        tasklist /fi "imagename eq !proc6!.exe" | find /i "!proc6!.exe" >nul
-        if errorlevel 1 (
+        taskList /fi "imageName eq !proc6!.exe" | find /i "!proc6!.exe" >nul
+        if errorLevel 1 (
             echo → Lancement de F...
             start "" "!app6!"
         ) else (
@@ -104,8 +104,8 @@ for %%C in (!cleaned!) do (
         )
     )
     if "%%C"=="7" (
-        tasklist /fi "imagename eq !proc7!.exe" | find /i "!proc7!.exe" >nul
-        if errorlevel 1 (
+        taskList /fi "imageName eq !proc7!.exe" | find /i "!proc7!.exe" >nul
+        if errorLevel 1 (
             echo → Lancement de G...
             start "" "!app7!"
         ) else (
