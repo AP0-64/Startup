@@ -12,6 +12,15 @@ set "app5=C:\Users\berti\AppData\Local\Programs\Opera GX\opera.exe"
 set "app6=C:\Program Files (x86)\Project64 3.0\Project64.exe"
 set "app7=C:\Users\berti\OneDrive\Bureau\Geometry Dash.url"
 
+:: === Définir les noms de processus associés ===
+set "proc1=android"
+set "proc2=Docker Desktop"
+set "proc3=code"
+set "proc4=cities"
+set "proc5=opera"
+set "proc6=project"
+set "proc7=dash"
+
 :: === Affichage du menu ===
 :MENU
 cls
@@ -44,9 +53,8 @@ for %%C in (1 2 3 4 5 6 7) do (
     )
 )
 
-:: === Lancer les applis correspondantes ===
 cls
-echo ========== LANCEMENT ==========
+echo ========== VÉRIFICATION & LANCEMENT ==========
 
 for %%C in (!cleaned!) do (
     if "%%C"=="1" (
@@ -55,7 +63,7 @@ for %%C in (!cleaned!) do (
             echo → Lancement des applis nécessaires pour B-FLOW...
             start "" "!app1!"
         ) else (
-            echo → A déjà en cours.
+            echo → Android Studio déjà ouvert.
         )
     )
     if "%%C"=="2" (
@@ -64,25 +72,25 @@ for %%C in (!cleaned!) do (
             echo → Lancement des applis nécessaires pour B-FLOW...
             start "" "!app2!"
         ) else (
-            echo → B déjà en cours.
+            echo → Docker déjà ouvert.
         )
     )
     if "%%C"=="3" (
         taskList /fi "imageName eq !proc3!.exe" | find /i "!proc3!.exe" >nul
         if errorLevel 1 (
-            echo → Lancement VS Code...
+            echo → Lancement de VS Code...
             start "" "!app3!"
         ) else (
-            echo → C déjà en cours.
+            echo → VS Code déjà ouvert.
         )
     )
     if "%%C"=="4" (
         taskList /fi "imageName eq !proc4!.exe" | find /i "!proc4!.exe" >nul
         if errorLevel 1 (
-            echo → Lancement de Cities Skylines 2...
+            echo → Lancement de Cities Skylines II...
             start "" "!app4!"
         ) else (
-            echo → D déjà en cours.
+            echo → Cities Skylines II déjà ouvert.
         )
     )
     if "%%C"=="5" (
@@ -91,16 +99,16 @@ for %%C in (!cleaned!) do (
             echo → Lancement de Opera GX...
             start "" "!app5!"
         ) else (
-            echo → E déjà en cours.
+            echo → Opera GX déjà ouvert.
         )
     )
     if "%%C"=="6" (
         taskList /fi "imageName eq !proc6!.exe" | find /i "!proc6!.exe" >nul
         if errorLevel 1 (
-            echo → Lancement de Project 64...
+            echo → Lancement de Project64...
             start "" "!app6!"
         ) else (
-            echo → F déjà en cours.
+            echo → Project64 déjà ouvert.
         )
     )
     if "%%C"=="7" (
@@ -109,7 +117,7 @@ for %%C in (!cleaned!) do (
             echo → Lancement de Geometry Dash...
             start "" "!app7!"
         ) else (
-            echo → G déjà en cours.
+            echo → Geometry Dash déjà ouvert.
         )
     )
 )
