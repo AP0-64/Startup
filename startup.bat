@@ -1,65 +1,83 @@
 @echo off
-title Launcher B-FLOW / Jeux
+setLocal EnableDelayedExpansion
+title Lanceur Multi-Apps
 color 0A
 
+:: === Définir les chemins des programmes ===
+set "app1=C:\chemin\vers\A.exe"
+set "app2=C:\chemin\vers\B.exe"
+set "app3=C:\chemin\vers\C.exe"
+set "app4=C:\chemin\vers\D.exe"
+set "app5=C:\chemin\vers\E.exe"
+set "app6=C:\chemin\vers\F.exe"
+set "app7=C:\chemin\vers\G.exe"
+
+:: === Affichage du menu ===
 :MENU
 cls
-echo ======================================
-echo           CHOISIS UNE OPTION
-echo ======================================
-echo 1 - B-FLOW (WEB)
-echo 2 - B-FLOW (Mobile)
-echo 3 - VS Code
-echo 4 - Opera GX
-echo 5 - Cities Skylines 2
-echo 6 - Geometry Dash
-echo 7 - Project 64
+echo =====================================
+echo           MENU DE LANCEMENT
+echo =====================================
+echo Tape les numéros des apps à lancer (ex: 13 ou 241)
+echo.
+echo 1 - Lancer A
+echo 2 - Lancer B
+echo 3 - Lancer C
+echo 4 - Lancer D
+echo 5 - Lancer E
+echo 6 - Lancer F
+echo 7 - Lancer G
 echo 0 - Quitter
-echo ======================================
+echo =====================================
 set /p choice=Ton choix : 
 
-if "%choice%"=="1" goto B_FLOW_WEB
-if "%choice%"=="2" goto B_FLOW_MOB
-if "%choice%"=="3" goto VS_CODE_ET_OPERA_GX
-if "%choice%"=="4" goto OPERA_GX
-if "%choice%"=="5" goto CITIES_SKYLINES_II
-if "%choice%"=="6" goto GEOMETRY_DASH
-if "%choice%"=="7" goto PROJECT_64
 if "%choice%"=="0" exit
+
+:: === Supprimer les doublons ===
+set "cleaned="
+for %%C in (1 2 3 4 5 6 7) do (
+    echo %choice% | find "%%C" >nul
+    if not errorLevel 1 (
+        echo !cleaned! | find "%%C" >nul
+        if errorLevel 1 set "cleaned=!cleaned!%%C"
+    )
+)
+
+:: === Lancer les applis correspondantes ===
+cls
+echo === LANCEMENT ===
+
+for %%C in (!cleaned!) do (
+    if "%%C"=="1" (
+        echo → Lancement de A...
+        start "" "!app1!"
+    )
+    if "%%C"=="2" (
+        echo → Lancement de B...
+        start "" "!app2!"
+    )
+    if "%%C"=="3" (
+        echo → Lancement de C...
+        start "" "!app3!"
+    )
+    if "%%C"=="4" (
+        echo → Lancement de D...
+        start "" "!app4!"
+    )
+    if "%%C"=="5" (
+        echo → Lancement de E...
+        start "" "!app5!"
+    )
+    if "%%C"=="6" (
+        echo → Lancement de F...
+        start "" "!app6!"
+    )
+    if "%%C"=="7" (
+        echo → Lancement de G...
+        start "" "!app7!"
+    )
+)
+
+echo.
+pause
 goto MENU
-
-:B_FLOW_WEB
-start "" "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe"
-start "" "C:\Program Files\Docker\Docker\Docker Desktop.exe"
-goto END
-
-:B_FLOW_MOB
-start "" "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe"
-start "" "C:\Program Files\Docker\Docker\Docker Desktop.exe"
-start "" "C:\Program Files\Android\Android Studio\bin\studio64.exe"
-goto END
-
-:OPERA_GX
-start "" "C:\Users\berti\AppData\Local\Programs\Opera GX\opera.exe"
-goto END
-
-:VS_CODE_ET_OPERA_GX
-start "" "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe"
-start "" "C:\Users\berti\AppData\Local\Programs\Opera GX\opera.exe"
-goto END
-
-:CITIES_SKYLINES_II
-start "" "C:\Users\berti\OneDrive\Bureau\Cities Skylines II.url"
-goto END
-
-:GEOMETRY_DASH
-start "" "C:\Users\berti\OneDrive\Bureau\Geometry Dash.url"
-goto END
-
-:PROJECT_64
-start "" "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Project64 2.3\Project64.lnk"
-start "" "C:\Users\berti\AppData\Local\Programs\Opera GX\opera.exe"
-goto END
-
-:END
-exit
