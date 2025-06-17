@@ -52,7 +52,7 @@ for %%C in (!cleaned!) do (
     if "%%C"=="1" (
         taskList /fi "imageName eq !proc1!.exe" | find /i "!proc1!.exe" >nul
         if errorLevel 1 (
-            echo → Lancement de A...
+            echo → Lancement des applis nécessaires pour B-FLOW...
             start "" "!app1!"
         ) else (
             echo → A déjà en cours.
@@ -61,7 +61,7 @@ for %%C in (!cleaned!) do (
     if "%%C"=="2" (
         taskList /fi "imageName eq !proc2!.exe" | find /i "!proc2!.exe" >nul
         if errorLevel 1 (
-            echo → Lancement de B...
+            echo → Lancement des applis nécessaires pour B-FLOW...
             start "" "!app2!"
         ) else (
             echo → B déjà en cours.
@@ -70,7 +70,7 @@ for %%C in (!cleaned!) do (
     if "%%C"=="3" (
         taskList /fi "imageName eq !proc3!.exe" | find /i "!proc3!.exe" >nul
         if errorLevel 1 (
-            echo → Lancement de C...
+            echo → Lancement VS Code...
             start "" "!app3!"
         ) else (
             echo → C déjà en cours.
@@ -79,7 +79,7 @@ for %%C in (!cleaned!) do (
     if "%%C"=="4" (
         taskList /fi "imageName eq !proc4!.exe" | find /i "!proc4!.exe" >nul
         if errorLevel 1 (
-            echo → Lancement de D...
+            echo → Lancement de Cities Skylines 2...
             start "" "!app4!"
         ) else (
             echo → D déjà en cours.
@@ -88,7 +88,7 @@ for %%C in (!cleaned!) do (
     if "%%C"=="5" (
         taskList /fi "imageName eq !proc5!.exe" | find /i "!proc5!.exe" >nul
         if errorLevel 1 (
-            echo → Lancement de E...
+            echo → Lancement de Opera GX...
             start "" "!app5!"
         ) else (
             echo → E déjà en cours.
@@ -97,7 +97,7 @@ for %%C in (!cleaned!) do (
     if "%%C"=="6" (
         taskList /fi "imageName eq !proc6!.exe" | find /i "!proc6!.exe" >nul
         if errorLevel 1 (
-            echo → Lancement de F...
+            echo → Lancement de Project 64...
             start "" "!app6!"
         ) else (
             echo → F déjà en cours.
@@ -106,7 +106,7 @@ for %%C in (!cleaned!) do (
     if "%%C"=="7" (
         taskList /fi "imageName eq !proc7!.exe" | find /i "!proc7!.exe" >nul
         if errorLevel 1 (
-            echo → Lancement de G...
+            echo → Lancement de Geometry Dash...
             start "" "!app7!"
         ) else (
             echo → G déjà en cours.
