@@ -8,9 +8,7 @@ set "app1=C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 set "app2=C:\Program Files\Docker\Docker\Docker Desktop.exe"
 set "app3=C:\Users\berti\AppData\Local\Programs\Opera GX\opera.exe"
 set "app4=C:\Program Files\Android\Android Studio\bin\studio64.exe"
-set "app5=C:\Users\berti\OneDrive\Bureau\Cities Skylines II.url"
 set "app6=C:\Program Files (x86)\Project64 3.0\Project64.exe"
-set "app7=C:\Users\berti\OneDrive\Bureau\Geometry Dash.url"
 
 :: === Noms des processus ===
 set "procVSCode=Code"
@@ -77,11 +75,17 @@ for %%C in (!cleaned!) do (
         call :LaunchIfNotRunning "%procAndroid%" "!app4!"
     )
     if "%%C"=="3" (
-        call :LaunchIfNotRunning "%procVSCode%" "!app1!"
+        taskList /fi "imageName eq !proc3!.exe" | find /i "!proc3!.exe" >nul
+        if errorLevel 1 (
+            echo → Lancement de VS Code...
+            start "" "!app4!"
+        ) else (
+            echo → VS Code est déjà ouvert.
+        )
     )
     if "%%C"=="4" (
         echo → Lancement de Cities Skylines II...
-        start "" "!app5!"
+        start "" "C:\Users\berti\OneDrive\Bureau\Cities Skylines II.url"
     )
     if "%%C"=="5" (
         call :LaunchIfNotRunning "%procOpera%" "!app3!"
@@ -91,7 +95,7 @@ for %%C in (!cleaned!) do (
     )
     if "%%C"=="7" (
         echo → Lancement de Geometry Dash...
-        start "" "!app7!"
+        start "" "C:\Users\berti\OneDrive\Bureau\Geometry Dash.url"
     )
 )
 
