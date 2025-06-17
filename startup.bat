@@ -27,8 +27,8 @@ echo           MENU DE LANCEMENT
 echo =====================================
 echo Tape les numéros des apps à lancer (ex: 14 ou 231)
 echo.
-echo 1 - B-FLOW (WEB)       [VSCode + Docker + Opera]
-echo 2 - B-FLOW (Mobile)    [VSCode + Docker + Opera + Android Studio]
+echo 1 - B-FLOW (WEB)
+echo 2 - B-FLOW (Mobile)
 echo 3 - VS Code
 echo 4 - Cities Skylines 2
 echo 5 - Opera GX
@@ -36,7 +36,7 @@ echo 6 - Project 64
 echo 7 - Geometry Dash
 echo 0 - Quitter
 echo =====================================
-set /p choice=Ton choix :
+set /p choice=Ton choix : 
 
 :: === Arrête le programme ===
 if "%choice%"=="0" exit
