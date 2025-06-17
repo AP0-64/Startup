@@ -20,13 +20,13 @@ echo           MENU DE LANCEMENT
 echo =====================================
 echo Tape les numéros des apps à lancer (ex: 14 ou 231)
 echo.
-echo 1 - Lancer A
-echo 2 - Lancer B
-echo 3 - Lancer C
-echo 4 - Lancer D
-echo 5 - Lancer E
-echo 6 - Lancer F
-echo 7 - Lancer G
+echo 1 - Lancer B-FLOW (WEB)
+echo 2 - Lancer B-FLOW (Mobile)
+echo 3 - Lancer VS Code
+echo 4 - Lancer Cities Skylines 2
+echo 5 - Lancer Opera GX
+echo 6 - Lancer Project 64
+echo 7 - Lancer Geometry Dash
 echo 0 - Quitter
 echo =====================================
 set /p choice=Ton choix : 
