@@ -46,7 +46,7 @@ for %%C in (1 2 3 4 5 6 7) do (
 
 :: === Lancer les applis correspondantes ===
 cls
-echo === LANCEMENT ===
+echo ========== LANCEMENT ==========
 
 for %%C in (!cleaned!) do (
     if "%%C"=="1" (
