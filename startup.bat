@@ -32,7 +32,7 @@ echo.
 echo 1 - Lancer B-FLOW (WEB)
 echo 2 - Lancer B-FLOW (Mobile)
 echo 3 - Lancer VS Code
-echo 4 - Lancer Cities Skylines 2
+echo 4 - Lancer Cities Skylines II
 echo 5 - Lancer Opera GX
 echo 6 - Lancer Project 64
 echo 7 - Lancer Geometry Dash
