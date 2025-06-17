@@ -15,11 +15,11 @@ set "app7=C:\Users\berti\OneDrive\Bureau\Geometry Dash.url"
 :: === Définir les noms de processus associés ===
 set "proc1=android"
 set "proc2=Docker Desktop"
-set "proc3=code"
-set "proc4=cities"
+set "proc3=Code"
+set "proc4=Cities Skylines II"
 set "proc5=opera"
-set "proc6=project"
-set "proc7=dash"
+set "proc6=Project64"
+set "proc7=chrome"
 
 :: === Affichage du menu ===
 :MENU
