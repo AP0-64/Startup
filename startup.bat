@@ -31,6 +31,7 @@ echo 0 - Quitter
 echo =====================================
 set /p choice=Ton choix : 
 
+:: === Arrête le programme ===
 if "%choice%"=="0" exit
 
 :: === Supprimer les doublons ===
