@@ -77,7 +77,7 @@ exit /b
 
 :Docker
 timeout /t 15 /nobreak >nul
-wsl docker stop $(docker ps -q)
+wsl bash -c "docker stop $(docker ps -q)"
 wsl bash -c "cd '/home/bert/Bureau WSL/B-FLOW/B-FLOW' && ./start.dev.sh"
 exit /b
 
