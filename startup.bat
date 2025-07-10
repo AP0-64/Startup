@@ -31,8 +31,6 @@ if "%choice%"=="7" goto PROJECT_64
 if "%choice%"=="8" goto GEOMETRY_DASH
 if "%choice%"=="0" exit
 
-echo Option invalide. Appuie sur une touche pour recommencer.
-pause >nul
 goto MENU
 
 :B_FLOW_WEB
