@@ -20,7 +20,6 @@ echo [0] - Quitter
 echo ======================================
 set /p choice=Ton choix : 
 
-rem Traitement des choix
 if "%choice%"=="1" goto B_FLOW_WEB
 if "%choice%"=="2" goto B_FLOW_MOB
 if "%choice%"=="3" goto VS_CODE_ET_OPERA_GX
@@ -35,11 +34,13 @@ goto MENU
 
 :B_FLOW_WEB
 call :LaunchCommon
+call :Docker
 goto END
 
 :B_FLOW_MOB
-call :LaunchCommon
 start "" "C:\Program Files\Android\Android Studio\bin\studio64.exe"
+call :LaunchCommon
+call :Docker
 goto END
 
 :VS_CODE_ET_OPERA_GX
@@ -72,6 +73,12 @@ goto END
 start "" "C:\Users\berti\AppData\Local\Programs\Opera GX\opera.exe"
 start "" "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe"
 start "" "C:\Program Files\Docker\Docker\Docker Desktop.exe"
+exit /b
+
+:Docker
+timeout /t 15 /nobreak >nul
+wsl docker stop $(docker ps -q)
+wsl bash -c "cd '/home/bert/Bureau WSL/B-FLOW/B-FLOW' && ./start.dev.sh"
 exit /b
 
 :END
