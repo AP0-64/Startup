@@ -10,11 +10,11 @@ echo           CHOISIS UNE OPTION
 echo ======================================
 echo [1] - B-FLOW (WEB)
 echo [2] - B-FLOW (Mobile)
-echo [3] - VS Code + Opera GX
+echo [3] - VS Code
 echo [4] - Opera GX
 echo [5] - Celeste
-echo [6] - Cities Skylines 2
-echo [7] - Project 64
+echo [6] - Cities Skylines II
+echo [7] - Project64
 echo [8] - Geometry Dash
 echo [0] - Quitter
 echo ======================================
