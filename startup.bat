@@ -29,12 +29,12 @@ if "%choice%"=="0" exit
 goto MENU
 
 :VS_CODE_ET_OPERA_GX
-start "" "C:\Users\berti\AppData\Local\Programs\Opera GX\opera.exe"
 start "" "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+call :OperaGX
 goto END
 
 :OPERA_GX
-start "" "C:\Users\berti\AppData\Local\Programs\Opera GX\opera.exe"
+call :OperaGX
 goto END
 
 :CELESTE
@@ -46,13 +46,20 @@ start "" "C:\Users\berti\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\S
 goto END
 
 :PROJECT_64
-start "" "C:\Users\berti\AppData\Local\Programs\Opera GX\opera.exe"
 start "" "C:\Program Files (x86)\Project64 3.0\Project64.exe"
+call :OperaGX
 goto END
 
 :GEOMETRY_DASH
 start "" "C:\Users\berti\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Steam\Geometry Dash.url"
 goto END
+
+:OperaGX
+tasklist /FI "IMAGENAME eq opera.exe" | find /I "opera.exe" >nul
+if errorlevel 1 (
+    start "" "C:\Users\berti\AppData\Local\Programs\Opera GX\opera.exe"
+)
+exit /b
 
 :END
 exit
