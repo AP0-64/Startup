@@ -9,27 +9,35 @@ echo ======================================
 echo           CHOISIS UNE OPTION
 echo ======================================
 echo [1] - VS Code
-echo [2] - Opera GX
-echo [3] - Celeste
-echo [4] - Cities Skylines II
-echo [5] - Project64
-echo [6] - Geometry Dash
+echo [2] - Blogtor
+echo [3] - Opera GX
+echo [4] - Celeste
+echo [5] - Cities Skylines II
+echo [6] - Project64
+echo [7] - Geometry Dash
 echo [0] - Quitter
 echo ======================================
 set /p choice=Ton choix : 
 
 if "%choice%"=="1" goto VS_CODE_ET_OPERA_GX
-if "%choice%"=="2" goto OPERA_GX
-if "%choice%"=="3" goto CELESTE
-if "%choice%"=="4" goto CITIES_SKYLINES_II
-if "%choice%"=="5" goto PROJECT_64
-if "%choice%"=="6" goto GEOMETRY_DASH
+if "%choice%"=="2" goto BLOGTOR
+if "%choice%"=="3" goto OPERA_GX
+if "%choice%"=="4" goto CELESTE
+if "%choice%"=="5" goto CITIES_SKYLINES_II
+if "%choice%"=="6" goto PROJECT_64
+if "%choice%"=="7" goto GEOMETRY_DASH
 if "%choice%"=="0" exit
 
 goto MENU
 
 :VS_CODE_ET_OPERA_GX
 start "" "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+call :OperaGX
+goto END
+
+:BLOGTOR
+start "" "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+start "" "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\devenv.exe"
 call :OperaGX
 goto END
 
