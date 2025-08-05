@@ -31,12 +31,12 @@ if "%choice%"=="0" exit
 goto MENU
 
 :VS_CODE_ET_OPERA_GX
-start "" "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+start "" "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe" --disable-updates
 call :OperaGX
 goto END
 
 :BLOGTOR
-start "" "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe"
+start "" "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe" --disable-updates
 start "" "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\devenv.exe"
 call :OperaGX
 goto END
