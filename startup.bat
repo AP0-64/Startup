@@ -44,38 +44,38 @@ if "%choice%"=="0" exit
 goto MENU
 
 :VS_CODE_ET_OPERA_GX
-call :runApp "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe" --disable-updates
+call start "" "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe" --disable-updates
 call :OperaGX
 goto END
 
 :VS_CODE_ET_DOCKER
-call :runApp "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe" --disable-updates
-call :runApp "C:\Program Files\Docker\Docker\Docker Desktop.exe"
+call start "" "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe" --disable-updates
+call start "" "C:\Program Files\Docker\Docker\Docker Desktop.exe"
 call :OperaGX
 goto END
 
 :VS_CODE_ET_ANDROID_STUDIO
-call :runApp "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe" --disable-updates
-call :runApp "C:\Program Files\Docker\Docker\Docker Desktop.exe"
-call :runApp "C:\Program Files\Android\Android Studio\bin\studio64.exe"
+call start "" "C:\Users\berti\AppData\Local\Programs\Microsoft VS Code\Code.exe" --disable-updates
+call start "" "C:\Program Files\Docker\Docker\Docker Desktop.exe"
+call start "" "C:\Program Files\Android\Android Studio\bin\studio64.exe"
 call :OperaGX
 goto END
 
 :CELESTE
-call :runApp "C:\Users\berti\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Steam\Celeste.url"
+call start "" "C:\Users\berti\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Steam\Celeste.url"
 goto END
 
 :CITIES_SKYLINES_II
-call :runApp "C:\Users\berti\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Steam\Cities Skylines II.url"
+call start "" "C:\Users\berti\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Steam\Cities Skylines II.url"
 goto END
 
 :PROJECT_64
-call :runApp "C:\Program Files (x86)\Project64 3.0\Project64.exe"
+call start "" "C:\Program Files (x86)\Project64 3.0\Project64.exe"
 call :OperaGX
 goto END
 
 :GEOMETRY_DASH
-call :runApp "C:\Users\berti\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Steam\Geometry Dash.url"
+call start "" "C:\Users\berti\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Steam\Geometry Dash.url"
 goto END
 
 :OPERA_GX
@@ -85,12 +85,12 @@ goto END
 :OperaGX
 tasklist /FI "IMAGENAME eq opera.exe" | find /I "opera.exe" >nul
 if errorlevel 1 (
-    call :runApp "C:\Users\berti\AppData\Local\Programs\Opera GX\opera.exe"
+    call start "" "C:\Users\berti\AppData\Local\Programs\Opera GX\opera.exe"
 )
 exit /b
 
-:runApp
-rem Usage: call :runApp "C:\chemin\vers\app.exe" [args...]
+start ""
+rem Usage: call start "" "C:\chemin\vers\app.exe" [args...]
 set "APP=%~1"
 shift
 set "ARGS=%*"
